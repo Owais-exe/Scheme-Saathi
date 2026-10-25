@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find Tamil Nadu government schemes and check possible eligibility.">
+  <title>Scheme Saathi | Tamil Nadu Government Schemes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="creator-banner" aria-label="Website credits">
+    <span class="creator-kicker" data-i18n="projectCredit">A STUDENT PROJECT</span>
+    <div class="creator-line"><span class="creator-label" data-i18n="madeByLabel">Made by</span><strong data-i18n="madeByName">Mohammad Owais Quazi</strong></div>
+    <div class="creator-line mentor-line"><span class="creator-label" data-i18n="mentorLabel">Under the mentorship of</span><strong data-i18n="mentorName">Mr. Divyanshu Chouhan</strong></div>
+  </div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Scheme Saathi home">
+      <span class="brand-mark">S</span><span><strong>Scheme Saathi</strong><small data-i18n="tagline">Tamil Nadu Government Schemes</small></span>
+    </a>
+    <div class="header-actions">
+      <span class="state-pill"><span class="dot"></span><span data-i18n="state">Tamil Nadu</span></span>
+      <button class="language-btn" id="languageBtn" type="button">हिन्दी</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="eyebrow">GOVERNMENT SCHEME FINDER</span></span>
+        <h1 data-i18n="heroTitle">Find the support<br><em>you may qualify for.</em></h1>
+        <p data-i18n="heroDesc">Explore Tamil Nadu schemes in simple language. Search by name or answer a few questions to discover relevant options.</p>
+        <div class="hero-stats">
+          <div><strong id="schemeCount">—</strong><span data-i18n="schemesListed">scheme records</span></div>
+          <div class="stat-divider"></div>
+          <div><strong>EN / हिन्दी</strong><span data-i18n="languageAvailable">two languages</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="art-core"><span>₹</span></div>
+        <div class="float-card float-card-top"><span class="mini-icon">✦</span><span data-i18n="support">Support</span></div>
+        <div class="float-card float-card-bottom"><span class="mini-icon green">✓</span><span data-i18n="personalized">Personalized matches</span></div>
+      </div>
+    </section>
+
+    <section class="search-panel">
+      <div class="section-heading">
+        <div><span class="section-kicker" data-i18n="explore">EXPLORE</span><h2 data-i18n="findScheme">Find a scheme</h2></div>
+        <button id="resetBtn" class="text-button" type="button" data-i18n="reset">Reset filters ↺</button>
+      </div>
+      <label class="search-box">
+        <span class="search-symbol">⌕</span>
+        <input id="searchInput" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Search schemes, benefits, or keywords…">
+        <kbd>ENTER</kbd>
+      </label>
+      <div class="filters">
+        <label class="filter-field"><span data-i18n="category">Scheme category</span><select id="categoryFilter"><option value="" data-i18n="allCategories">All categories</option></select></label>
+        <label class="filter-field"><span data-i18n="whoFor">Who is it for?</span><select id="audienceFilter">
+          <option value="" data-i18n="everyone">All beneficiaries</option>
+          <option value="Student" data-en="Student" data-hi="विद्यार्थी">Student</option><option value="Farmer" data-en="Farmer" data-hi="किसान">Farmer</option><option value="Women" data-en="Women" data-hi="महिलाएँ">Women</option><option value="Person with disability" data-en="Person with disability" data-hi="दिव्यांग व्यक्ति">Person with disability</option><option value="Artist" data-en="Artist" data-hi="कलाकार">Artist</option><option value="MSME / Business" data-en="MSME / Business" data-hi="MSME / व्यवसाय">MSME / Business</option><option value="Senior citizen" data-en="Senior citizen" data-hi="वरिष्ठ नागरिक">Senior citizen</option><option value="Tribal / Adi Dravidar" data-en="Tribal / Adi Dravidar" data-hi="आदिवासी / आदि द्रविड़">Tribal / Adi Dravidar</option><option value="Family" data-en="Family" data-hi="परिवार">Family</option>
+        </select></label>
+        <label class="filter-field"><span data-i18n="benefitType">Benefit type</span><select id="benefitFilter"><option value="" data-i18n="allBenefits">All benefits</option></select></label>
+      </div>
+      <div class="results-top"><p id="resultsSummary" aria-live="polite">Loading schemes…</p><label class="sort-control"><span data-i18n="sort">Sort:</span><select id="sortFilter"><option value="relevance" data-i18n="relevance">Relevance</option><option value="az" data-i18n="az">Name A–Z</option></select></label></div>
+      <div id="schemeGrid" class="scheme-grid"></div>
+      <div id="emptyState" class="empty-state" hidden><div class="empty-icon">⌕</div><h3 data-i18n="noResults">No matching schemes found</h3><p data-i18n="tryDifferent">Try a different search term or reset the filters.</p><button class="primary-btn" id="emptyReset" type="button" data-i18n="resetFilters">Reset filters</button></div>
+    </section>
+
+    <section class="eligibility-section" id="eligibility">
+      <div class="eligibility-intro">
+        <span class="section-kicker" data-i18n="quickCheck">QUICK CHECK</span>
+        <h2 data-i18n="eligibilityTitle">Find schemes for your situation</h2>
+        <p data-i18n="eligibilityDesc">Answer a few optional questions. We’ll show schemes whose descriptions match your answers. Final eligibility depends on official rules.</p>
+        <div class="privacy-note"><span>◎</span><span data-i18n="privacy">Your answers stay in this page and are not sent to a server.</span></div>
+      </div>
+      <form id="eligibilityForm" class="eligibility-form">
+        <div class="question-grid">
+          <label class="question"><span data-i18n="ageLabel">Your age</span><select id="age"><option value="" data-i18n="preferNot">Choose / prefer not to say</option><option value="under18" data-en="Under 18" data-hi="18 वर्ष से कम">Under 18</option><option value="18to39" data-en="18–39" data-hi="18–39 वर्ष">18–39</option><option value="40to59" data-en="40–59" data-hi="40–59 वर्ष">40–59</option><option value="60plus" data-en="60+" data-hi="60 वर्ष या अधिक">60+</option></select></label>
+          <label class="question"><span data-i18n="occupationLabel">Your situation / occupation</span><select id="occupation"><option value="" data-i18n="chooseOne">Choose an option</option><option value="student" data-en="Student" data-hi="विद्यार्थी">Student</option><option value="farmer" data-en="Farmer" data-hi="किसान">Farmer</option><option value="business" data-en="Business owner / MSME" data-hi="व्यवसाय / MSME">Business owner / MSME</option><option value="artist" data-en="Artist / folk artist" data-hi="कलाकार / लोक कलाकार">Artist / folk artist</option><option value="worker" data-en="Employed / working" data-hi="नौकरी / कामकाज">Employed / working</option><option value="unemployed" data-en="Unemployed" data-hi="बेरोज़गार">Unemployed</option><option value="homemaker" data-en="Homemaker" data-hi="गृहिणी / घर संभालने वाले">Homemaker</option><option value="other" data-en="Other" data-hi="अन्य">Other</option></select></label>
+          <label class="question"><span data-i18n="communityLabel">Community category (optional)</span><select id="community"><option value="" data-i18n="notSpecify">Prefer not to specify</option><option value="scst" data-en="SC / ST" data-hi="SC / ST">SC / ST</option><option value="bcm" data-en="BC / MBC / DNC" data-hi="BC / MBC / DNC">BC / MBC / DNC</option><option value="other" data-en="Other" data-hi="अन्य">Other</option></select></label>
+          <label class="question"><span data-i18n="disabilityLabel">Disability status (optional)</span><select id="disability"><option value="" data-i18n="notSpecify">Prefer not to specify</option><option value="yes" data-en="Person with disability" data-hi="दिव्यांग व्यक्ति">Person with disability</option><option value="no" data-en="No disability" data-hi="दिव्यांगता नहीं">No disability</option></select></label>
+          <label class="question"><span data-i18n="incomeLabel">Household situation (optional)</span><select id="income"><option value="" data-i18n="notSpecify">Prefer not to specify</option><option value="bpl" data-en="Below poverty line / BPL" data-hi="गरीबी रेखा से नीचे / BPL">Below poverty line / BPL</option><option value="low" data-en="Low income / financial need" data-hi="कम आय / आर्थिक ज़रूरत">Low income / financial need</option><option value="other" data-en="Other / not sure" data-hi="अन्य / पता नहीं">Other / not sure</option></select></label>
+          <label class="question"><span data-i18n="maritalLabel">Marital / family situation (optional)</span><select id="family"><option value="" data-i18n="notSpecify">Prefer not to specify</option><option value="widow" data-en="Widow" data-hi="विधवा">Widow</option><option value="marriage" data-en="Seeking marriage assistance" data-hi="विवाह सहायता चाहिए">Seeking marriage assistance</option><option value="girlchild" data-en="Girl child / parent of a girl child" data-hi="बालिका / बालिका के माता-पिता">Girl child / parent of a girl child</option><option value="other" data-en="Other" data-hi="अन्य">Other</option></select></label>
+        </div>
+        <button class="primary-btn full-btn" type="submit"><span data-i18n="checkMatches">Show matching schemes</span><span>↗</span></button>
+        <p id="eligibilityNote" class="eligibility-note" aria-live="polite" data-i18n="eligibilityDisclaimer">This is a basic guide, not an official eligibility decision.</p>
+      </form>
+    </section>
+
+    <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark">S</span><span><strong>Scheme Saathi</strong><small data-i18n="tagline">Tamil Nadu Government Schemes</small></span></a><p data-i18n="footerText">A simple discovery interface based on scheme listings supplied for this project. Verify details with the relevant department before applying.</p><span class="footer-bottom">© <span id="year"></span> Scheme Saathi · <span data-i18n="madeFor">Made for easier scheme discovery</span></span></footer>
+  </main>
+
+  <dialog id="schemeDialog" class="scheme-dialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Close" type="button">×</button>
+    <span id="dialogCategory" class="card-category"></span>
+    <h2 id="dialogTitle"></h2>
+    <h3 class="dialog-summary-label" data-i18n="schemeSummary">Scheme summary</h3>
+    <p id="dialogDescription"></p>
+    <section class="detail-section"><h3 data-i18n="simpleMeaning">In simple words</h3><p id="dialogMeaning"></p></section>
+    <section class="detail-section"><h3 data-i18n="whoMayBenefit">Who may find this scheme relevant?</h3><p id="dialogAudience"></p></section>
+    <section class="detail-section"><h3 data-i18n="beforeApply">Before you apply</h3><ul id="dialogChecklist"></ul></section>
+    <div class="dialog-tags" id="dialogTags"></div>
+    <div class="notice-box"><strong data-i18n="important">Important</strong><p data-i18n="verifyDetails">The listing text may be incomplete. Confirm current eligibility, documents, deadlines and benefit amount with the official Tamil Nadu department or myScheme before applying.</p></div>
+    <button class="primary-btn" id="dialogCheck" type="button"><span data-i18n="checkEligibility">Check my possible matches</span><span>↗</span></button>
+  </dialog>
+  <script src="game.js"></script>
+</body>
+</html>
